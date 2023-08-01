@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const Title = ({ course }) => <h1> {course} </h1>
+const Parragraph = ({ part, exercises }) => <p> {part} {exercises} </p>
+const Exercise = ({ exercises }) => <p> Number of exercises {exercises} </p>
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -16,15 +18,17 @@ const App = () => {
     <div>
       <Title course={course} />
       <p>
-        {part1} {exercises1}
+        <Parragraph part={part1} exercises={exercises1} />
       </p>
       <p>
-        {part2} {exercises2}
+        <Parragraph part={part2} exercises={exercises2} />
       </p>
       <p>
-        {part3} {exercises3}
+        <Parragraph part={part3} exercises={exercises3} />
       </p>
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <p>
+        <Exercise exercises={exercises1 + exercises2 + exercises3} />
+      </p>
     </div>
   )
 }
